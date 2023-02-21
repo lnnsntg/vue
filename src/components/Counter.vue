@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ Entraron }}</h2>
+  <h2>{{ customTitle }}</h2>
   <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
   <div>
     <button v-on:click="incrementarCounter">+ 1</button>
@@ -12,46 +12,54 @@ export default {
   props: ['title'],
 
   name: 'Counter',
-  data() {
+
+  data () {
     return {
       counter: 5
     }
   },
+  
   methods: {
-    getSquart() {
+    getSquart () {
       console.log('0000')
       return Math.pow(this.counter, 2)
     },
 
-    incrementarCounter(){
+    incrementarCounter () {
       return this.counter++
-    },    
+    },
 
-    decrementarCounter(){
-      return this.counter  = this.counter - 1
+    decrementarCounter () {
+      return (this.counter = this.counter - 1)
     }
   },
+
   computed: {
-    squareCounter() {
-      console.log("veces");
+    squareCounter () {
+      console.log('veces')
       return Math.pow(this.counter, 2)
+    },
+
+    customTitle () {
+      return this.title || 'Counter'
+      // return this.title ? this.title : 'Counter'
     }
   }
 }
 </script>
 
 <style>
-button{
+button {
   background-color: greenyellow;
   border-radius: 5px;
-  border:1px solid grey;
+  border: 1px solid grey;
   color: darkolivegreen;
   cursor: pointer;
   margin: 0 5px;
   padding: 5px 15px;
 }
 
-button:hover{
+button:hover {
   background-color: antiquewhite;
   transition: 0.3s ease-in-out;
 }
