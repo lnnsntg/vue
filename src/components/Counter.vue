@@ -9,38 +9,46 @@
 
 <script>
 export default {
-  props: ['title'],
+  props: {
+    title: String,
+    start: {
+      type: Number,
+      default: 25,
+      // required: true
+    }
+  },
 
   name: 'Counter',
 
-  data () {
+  data() {
     return {
-      counter: 5
+      counter: this.start
     }
   },
-  
-  methods: {
-    getSquart () {
-      console.log('0000')
-      return Math.pow(this.counter, 2)
-    },
 
-    incrementarCounter () {
+  methods: {
+    // Este metodo no se esta usando
+    /*     getSquart () {
+          console.log('0000')
+          return Math.pow(this.counter, 2)
+        }, */
+
+    incrementarCounter() {
       return this.counter++
     },
 
-    decrementarCounter () {
+    decrementarCounter() {
       return (this.counter = this.counter - 1)
     }
   },
 
   computed: {
-    squareCounter () {
+    squareCounter() {
       console.log('veces')
       return Math.pow(this.counter, 2)
     },
 
-    customTitle () {
+    customTitle() {
       return this.title || 'Counter'
       // return this.title ? this.title : 'Counter'
     }
@@ -61,6 +69,6 @@ button {
 
 button:hover {
   background-color: antiquewhite;
-  transition: 0.3s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 </style>
