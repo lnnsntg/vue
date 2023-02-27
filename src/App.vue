@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <Counter v-bind:start="15" :start="10"></Counter>
+  <Counter v-bind:start="10"></Counter>
   <!-- Version abreviadad de v-bind:start se puede escribir :start -->
   <!--  <Counter :start="10"></Counter> -->
 </template>

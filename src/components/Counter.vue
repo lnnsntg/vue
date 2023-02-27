@@ -8,13 +8,17 @@
 </template>
 
 <script>
+
 export default {
   props: {
     title: String,
     start: {
       type: Number,
       default: 25,
-      // required: true
+      required: true,
+      validator(value) {
+        return value > 100
+      }
     }
   },
 
@@ -44,7 +48,7 @@ export default {
 
   computed: {
     squareCounter() {
-      console.log('veces')
+      // console.log('veces')
       return Math.pow(this.counter, 2)
     },
 
