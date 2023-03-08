@@ -4,20 +4,22 @@
   <div>
     <button v-on:click="incrementarCounter">+ 1</button>
     <button @click="decrementarCounter">- 1</button>
+    <indecision></indecision>
   </div>
 </template>
 
 <script>
+import  Indecision  from "./Indecision.vue";
 
 export default {
   props: {
     title: String,
     start: {
       type: Number,
-      default: 25,
+      default: 10,
       required: true,
       validator(value) {
-        return value > 100
+        return value > 0
       }
     }
   },
